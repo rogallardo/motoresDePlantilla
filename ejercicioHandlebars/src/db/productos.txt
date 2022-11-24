@@ -10,6 +10,16 @@
     "id": 1
   },
   {
+    "nombre": "Notebook Lenovo I3",
+    "descripcion": "Notebook Lenovo I3",
+    "timestamp": 1268647526189,
+    "codigo": "1234567890",
+    "precio": 155,
+    "stock": 8,
+    "foto": "url",
+    "id": 2
+  },
+  {
     "nombre": "Mouse Logitech",
     "descripcion": "Mouse Logitech",
     "timestamp": 1068647526189,
@@ -19,14 +29,5 @@
     "foto": "url",
     "id": 3
   },
-  {
-    "nombre": "Nuevo",
-    "descripcion": "Nuevo",
-    "timestamp": 1668647566189,
-    "codigo": "1234567890",
-    "precio": 120,
-    "stock": 10,
-    "foto": "url",
-    "id": 4
-  }
+  
 ]
