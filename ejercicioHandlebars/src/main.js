@@ -12,10 +12,19 @@ aplicacion.use(express.urlencoded({
 }))
 
 //implementar rutas
-aplicacion.use('/api/producto', rutaProducto)
+aplicacion.use('/api/productos', rutaProducto)
 aplicacion.use('/api/carrito', rutaCarrito)
 
 //////////////////////////
+//Midleware de rutas no implementadas
+aplicacion.use((peticion, respuesta, next) => {
+    if (!peticion.route) {
+      respuesta.status(404).send({ error : -2, descripcion: `ruta ${peticion.url} no encontrada` });
+    } else {
+      next();
+    }
+  })
+  
  ///SERVIDOR////
 
 const servidor = aplicacion.listen(port, () => {
