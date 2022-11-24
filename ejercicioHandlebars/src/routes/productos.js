@@ -33,6 +33,7 @@ rutaProducto.get('/:id', async (peticion, respuesta) => {
 
 
 rutaProducto.post('/', async (peticion, respuesta) => {
+  const data = peticion.body;
     const nuevoProducto = await productos.save(data);
     !data && respuesta.status(204).json(notFound);
     respuesta.status(201).json(data);
