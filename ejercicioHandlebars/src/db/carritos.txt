@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "timestamp": 1668647566189,
+    "productos": [
+      {
+        "nombre": "Tv Led Samsung 43",
+        "descripcion": "Tv Led Samsung 43",
+        "timestamp": 1668647566189,
+        "codigo": "1234567890",
+        "precio": 120,
+        "stock": 10,
+        "foto": "url",
+        "id": 1
+  }
+    ]
+  },
+  {
+    "timestamp": 1669160390270,
+    "productos": [],
+    "id": 2
+  }
+]
