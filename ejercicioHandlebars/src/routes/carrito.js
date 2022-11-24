@@ -6,6 +6,8 @@ const rutaCarrito = express.Router();
 const carritos = new Contenedor ('src/db/carritos.txt')
 const productos = new Contenedor('src/db/productos.txt');
 
+
+
 //Endpoints***
 
 rutaCarrito.get('/', async (peticion, respuesta) => {
@@ -24,7 +26,7 @@ rutaCarrito.delete('/:id', async (peticion, respuesta) => {
 rutaCarrito.get('/:id/productos', async (peticion, respuesta) => {
   const idCarrito = parseInt(peticion.params.id);
   const listaProductos = await carritos.getById(idCarrito);
-  respuesta.json(listaProductos.productos);
+  respuesta.json(listaProductos);
 });
 
 rutaCarrito.post('/', async (peticion, respuesta) => {
@@ -40,6 +42,7 @@ rutaCarrito.post('/:id/productos', async (peticion, respuesta) => {
   const idCarrito = parseInt(peticion.params.id);
   const idProducto = peticion.body.idProducto;
   const producto = await productos.getById(idProducto);
+  console.log(producto)
   const carrito = await carritos.getById(idCarrito);
   carrito.productos.push(producto);
   await carritos.update(idCarrito, carrito);
@@ -66,6 +69,8 @@ rutaCarrito.delete('/:id/productos/:id_prod', async (peticion, respuesta) => {
     status: 'ok'
   });
 });
+
+
 
 
 

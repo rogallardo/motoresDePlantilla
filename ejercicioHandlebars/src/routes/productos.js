@@ -32,7 +32,7 @@ rutaProducto.get('/:id', async (peticion, respuesta) => {
 })
 
 
-rutaProducto.post('/', async (peticion, respuesta) => {
+rutaProducto.post('/', privilegio, async (peticion, respuesta) => {
   const data = peticion.body;
     const nuevoProducto = await productos.save(data);
     !data && respuesta.status(204).json(notFound);
@@ -47,7 +47,7 @@ rutaProducto.put('/:id', privilegio, async (peticion, respuesta) => {
   respuesta.json(producto);
 });
 
-rutaProducto.delete('/:id', async (peticion, respuesta) => {
+rutaProducto.delete('/:id', privilegio, async (peticion, respuesta) => {
     const idProducto = parseInt(peticion.params.id);
     await productos.deleteById(idProducto) 
     respuesta.status(200).json(idProducto);
